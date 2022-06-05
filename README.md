@@ -1,6 +1,6 @@
 # Development Wordpress Block Theme
 
-## Fonts
+## Variable Fonts
 
 ### Create Variable WOFF2 Fonts
 
