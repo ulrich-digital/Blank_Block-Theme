@@ -30,9 +30,21 @@ This snippet is working
 ```
 {
 	"version": 2,
-	"customTemplates":[],
+	"customTemplates":[
+		{
+			"name": "singular_without_title",
+			"title": "Single ohne Titel",
+			"postTypes": [
+				"page",
+				"post"
+			]
+		}
+	],
 	"settings": {
-		"layout": {},
+		"layout": {
+			"contentSize": "650px",
+			"wideSize": "1000px"
+		},
 		"typography": {
 			"dropCap": false,
 			"fontFamilies": [
@@ -47,7 +59,8 @@ This snippet is working
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./fonts/Rubik-VariableFont_wght.woff2" ]
-						},{
+						},
+						{
 							"fontFamily": "Rubik UD",
 							"fontWeight": "500",
 							"fontStyle": "normal",
