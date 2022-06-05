@@ -30,23 +30,9 @@ This snippet is working
 ```
 {
 	"version": 2,
-	"customTemplates":[
-		{
-			"name": "singular_without_title",
-			"title": "Single ohne Titel",
-			"postTypes": [
-				"page",
-				"post"
-			]
-		}
-	],
+	"customTemplates":[],
 	"settings": {
-		"layout": {
-			"contentSize": "650px",
-			"wideSize": "1000px"
-		},
 		"typography": {
-			"dropCap": false,
 			"fontFamilies": [
 				{
 					"fontFamily": "\"Rubik UD\", sans-serif",
