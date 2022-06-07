@@ -99,3 +99,10 @@ This snippet is working
 	}
 }
 ```
+## Navigation
+
+Problem: Wenn eine Navigation über das Template-File (i.e. header.html) eingefügt werden soll, ist die Menü-ID unbekannt. Diese sollte vorhanden sein, damit die korrekten Menü-Einträge ausgegeben werden können.
+
+Lösungsansatz 1: Im Editor ein Navigations-Block hinzufügen, im Code-Editor den entsprechenden Code rauskopieren, Navigations-Block wieder löschen.
+
+Lösungsansatz 2: Bei kleinen Seiten (wenig Menü-Punkte) das Menü gleich händisch im header.html hinterlegen.
