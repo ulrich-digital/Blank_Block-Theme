@@ -169,28 +169,4 @@ function ud_enqueue_frontend_scripts(){
 }
 add_action('wp_enqueue_scripts', 'ud_enqueue_frontend_scripts');
 
-
-
-
-
-
-/* =============================================================== *\
-   add schema links
-   > header.php
-\* =============================================================== */
-
-function ud_schema_type(){
-    $schema = 'https://schema.org/';
-    if (is_single()) {
-        $type = "Article";
-    } elseif (is_author()) {
-        $type = 'ProfilePage';
-    } elseif (is_search()) {
-        $type = 'SearchResultsPage';
-    } else {
-        $type = 'WebPage';
-    }
-    echo 'itemscope itemtype="' . $schema . $type . '"';
-}
-
 ?>
