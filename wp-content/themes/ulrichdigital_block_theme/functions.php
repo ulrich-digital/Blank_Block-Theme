@@ -29,6 +29,110 @@ function ud_blocks_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'ud_blocks_enqueue_styles' );
 
 
+/* =============================================================== *\ 
+
+ 	 Google Fonts 
+
+\* =============================================================== */ 
+  
+
+add_action('wp_head', function(){ ?>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXL7DFWQH9"></script>
+    
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CXL7DFWQH9');
+    </script>
+	
+	<meta charset="<?php bloginfo('charset'); ?>" />
+	<meta name="viewport" content="width=device-width" />
+	
+
+	<meta name="zipcode" content="6430">
+	<meta name="city" content="Schwyz">
+	<meta name="country" content="CH">
+
+	<meta name="author" content="ulrich.digital">
+	<meta name="publisher" content="Matthias Ulrich">
+	<meta name="copyright" content="ulrich.digital">
+	<meta name="keywords" content="Webagentur, Webdesign, Website, Internetagentur, Webseite, Design, Schwyz">
+	<meta name="page-topic" content="Dienstleistung">
+	<meta name="page-type" content="Produktinfo">
+	<meta name="audience" content="Profis">
+	<meta name="DC.Creator" content="ulrich.digital">
+	<meta name="DC.Publisher" content="Matthias Ulrich">
+	<meta name="DC.Rights" content="ulrich.digital">
+	<meta name="DC.Description" content="Webagentur für Webdesign, WordPress, WooCommerce, Online Shops und SEO | Digitalagentur & Webagentur Schwyz | Hier entsteht Ihre Webseite mit ♥">
+	<meta name="DC.Language" content="de">
+	<meta name="robots" content="index, follow">
+	<!--
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?php echo get_stylesheet_directory_uri(); ?>/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+	-->
+	<?php
+	
+});
+
+/* =============================================================== *\ 
+
+ 	 Custom-Logo 
+
+\* =============================================================== */ 
+  add_theme_support( 'custom-logo' );
+  function themename_custom_logo_setup() {
+    $defaults = array(
+        'height'               => 100,
+        'width'                => 400,
+        'flex-height'          => true,
+        'flex-width'           => true,
+        'header-text'          => array( 'site-title', 'site-description' ),
+        'unlink-homepage-logo' => false, 
+    );
+ 
+    add_theme_support( 'custom-logo', $defaults );
+}
+ 
+add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+
+function get_custom_logo_callback( $html ) {
+    if ( has_custom_logo() ) {
+        return $html;
+    } else {
+        return '<h3>Logo</h3>';
+    }
+}
+
+add_filter( 'get_custom_logo', 'get_custom_logo_callback' );
+
+
+/* =============================================================== *\
+   Enable SVG
+\* =============================================================== */
+
+function ud_add_svg_to_upload_mimes($upload_mimes){
+	$upload_mimes['svg'] = 'image/svg+xml';
+	$upload_mimes['svgz'] = 'image/svg+xml';
+	return $upload_mimes;
+}
+add_filter('upload_mimes', 'ud_add_svg_to_upload_mimes');
 /* =============================================================== *\
 
  	 Frontend
@@ -64,7 +168,6 @@ function ud_enqueue_frontend_scripts(){
 	wp_enqueue_script( 'ulrich_digital',  $gsdu . $path_h5, array('jquery', 'gsap'), filemtime( $gtd. $path_h5 ), false );
 }
 add_action('wp_enqueue_scripts', 'ud_enqueue_frontend_scripts');
-
 
 
 
