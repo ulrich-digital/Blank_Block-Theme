@@ -5,7 +5,7 @@ if ( ! function_exists( 'ud_theme_support' ) ) :
 		add_theme_support( 'wp-block-styles' );
 
 		// Enqueue editor styles.
-		add_editor_style( 'style.css' );
+		//add_editor_style( 'style.css' );
 		
 		
 		add_editor_style(
@@ -14,8 +14,6 @@ if ( ! function_exists( 'ud_theme_support' ) ) :
 				'style-admin.css'
 			)
 		);
-		//style-shared.css
-		//style-admin.css
 	}
 endif;
 add_action( 'after_setup_theme', 'ud_theme_support' );
@@ -24,6 +22,7 @@ add_action( 'after_setup_theme', 'ud_theme_support' );
 
 function ud_blocks_enqueue_styles() {
 	wp_enqueue_style( 'ud-blocks-style-shared', get_template_directory_uri() . '/style-shared.css', array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'ud-blocks-style-frontend', get_template_directory_uri() . '/style-frontend.css', array(), wp_get_theme()->get( 'Version' ) );
 	//wp_enqueue_style( 'tt1-blocks-blocks', get_template_directory_uri() . '/assets/css/blocks.css', array(), wp_get_theme()->get( 'Version' ) );
 }
 add_action( 'wp_enqueue_scripts', 'ud_blocks_enqueue_styles' );
@@ -168,5 +167,7 @@ function ud_enqueue_frontend_scripts(){
 	wp_enqueue_script( 'ulrich_digital',  $gsdu . $path_h5, array('jquery', 'gsap'), filemtime( $gtd. $path_h5 ), false );
 }
 add_action('wp_enqueue_scripts', 'ud_enqueue_frontend_scripts');
+
+
 
 ?>
