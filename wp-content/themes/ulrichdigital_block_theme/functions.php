@@ -46,7 +46,7 @@ function ud_enqueue_frontend_scripts(){
 
 
 	$gsdu = get_stylesheet_directory_uri() . "/assets/js/";
-	$gtd = get_template_directory();
+	$gtd = get_template_directory() . "/assets/js/";
 	
 	//$path_h0 = 'jquery-ui.min.js';
 	$path_h1 = 'gsap.min.js';
