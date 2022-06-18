@@ -1,0 +1,52 @@
+/* backend styles */
+
+:root {
+    --color-page-background: #1E2023;
+    --color-text: #D2D2D2;
+    --font-page: 'Roboto', sans-serif; /* Laufschrift */
+    --font-title: 'Old Standard TT'; /* Titelschrift */
+    --color-red: #D02A36;
+    --color-link: #C9AC8C;
+    --color-hover: #FFFFFF;
+    --color-brown: #5b2e23;
+    --color-violet: #4a3037;
+    --menubar-height: 60px;
+}
+
+.pressebericht {
+    display: flex;
+}
+
+.attachment {
+    padding-right: 0.5rem;
+}
+
+svg.attachment-file {
+    width: 24px;
+    height: auto;
+}
+
+svg.attachment-link {
+    margin-top: 4px;
+    width: 19px;
+    height: auto;
+}
+
+.blocks-gallery-item figcaption strong {
+    font-size: .95rem;
+    font-weight: 300;
+    color: var(--color-link);
+    padding-bottom: 0.2rem;
+    display: inline-block;
+}
+
+.pressebericht-wrapper .legende span {
+    display: block;
+}
+
+.kulissen strong,
+.ensemble strong,
+.regie strong {
+    font-weight: 300;
+    color: var(--color-link);
+}
