@@ -1,9 +1,12 @@
-
-/*
-Zusätzliches CSS für Admin 
-*/
-
-body{
+/* =============================================================== *\ 
+   CSS für Admin 
+\* =============================================================== */ 
+  
+body.wp-admin{
 	background: #eee;
+	font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-size: 13px;
+	line-height: 18px;
+	font-weight: 400;
 }
 
