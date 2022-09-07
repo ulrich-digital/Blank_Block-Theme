@@ -1,18 +1,15 @@
 <?php 
-if ( ! function_exists( 'ud_theme_support' ) ) :
-	function ud_theme_support() {
-		// Add support for block styles.
-		add_theme_support( 'wp-block-styles' );
-
-		add_editor_style(
-			array(
-				'style-shared.css',
-				'style-admin.css'
-			)
-		);
+/* =============================================================== *\ 
+   Admin-Styles 
+   Sharded-Styles
+\* =============================================================== */ 
+if ( ! function_exists( 'uldi_admin_style' ) ) :
+	function uldi_admin_style() {
+		wp_enqueue_style('admin-styles', get_template_directory_uri().'/style-admin.css'); 
+		wp_enqueue_style('admin-shared', get_template_directory_uri().'/style-shared.css'); 
 	}
 endif;
-add_action( 'admin_enqueue_scripts', 'ud_theme_support' );
+add_action('admin_enqueue_scripts', 'uldi_admin_style');
 
 
 
