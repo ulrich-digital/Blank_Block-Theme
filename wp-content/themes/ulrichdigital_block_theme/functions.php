@@ -12,11 +12,14 @@ endif;
 add_action('admin_enqueue_scripts', 'uldi_admin_style');
 
 
-
+/* =============================================================== *\ 
+   Frontend-Styles 
+   Sharded-Styles
+\* =============================================================== */ 
 function ud_blocks_enqueue_styles() {
 	wp_enqueue_style( 'ud-blocks-style-shared', get_template_directory_uri() . '/style-shared.css', array(), wp_get_theme()->get( 'Version' ) );
 	wp_enqueue_style( 'ud-blocks-style-frontend', get_template_directory_uri() . '/style-frontend.css', array(), wp_get_theme()->get( 'Version' ) );
-	//wp_enqueue_style( 'tt1-blocks-blocks', get_template_directory_uri() . '/assets/css/blocks.css', array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'font_awesome', get_stylesheet_directory_uri() . "/css/fontawesome/all.css", [], filemtime( get_stylesheet_directory() . "/css/fontawesome/all.css" ) );
 }
 add_action( 'wp_enqueue_scripts', 'ud_blocks_enqueue_styles' );
 
