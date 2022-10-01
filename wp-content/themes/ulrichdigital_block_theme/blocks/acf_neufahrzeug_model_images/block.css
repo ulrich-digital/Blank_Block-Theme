@@ -1,0 +1,111 @@
+/* =============================================================== *\ 
+   Model Images Slider
+\* =============================================================== */ 
+.entry-content .slick_model_image_container{
+	width: calc(100% - 80px);
+	max-width: 1600px;
+	margin: 6vh 0 10vh;
+	}
+
+.slick-slider.model_image_slider_big{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	}
+	
+.slick-slider.model_image_slider_big .slider_item img.big_image{
+	width: 100%;
+	height: auto;
+	}
+
+.slick-slider.model_image_slider_big .slick-arrow{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	font-size: 36px;
+	color:var(--wp--preset--color--dark-blue);
+	cursor: pointer;
+	z-index: 1;
+	}
+
+.slick-slider.model_image_slider_big .slick-arrow.slick_left{
+	left: 0;
+	}
+	
+.slick-slider.model_image_slider_big .slick-arrow.slick_right{
+	right: 0;
+	}
+
+/* =============================================================== *\ 
+   Color Chips 
+\* =============================================================== */ 
+.color_chips_below_slider {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	max-width: 800px;
+	margin: 1em auto;
+	padding: 20px;
+	}
+	
+.color_chips_below_slider .single_color.as_link{
+	display: inline-block;
+	padding: 10px;
+	margin: 7px;
+	background: #ffffff;
+	border-radius: 20px;
+	color: var(--wp--preset--color--dark-blue);
+	font-size: 22px;
+	font-weight: 100;
+	transition: var(--hoverTrans);
+	cursor: pointer;
+	}
+	
+.color_chips_below_slider .single_color.as_link:hover,
+.color_chips_below_slider .single_color.as_link.active{
+	background: var(--wp--preset--color--dark-blue);
+	color: var(--wp--preset--color--light-blue);
+	}
+
+/* =============================================================== *\ 
+   Small images as navigation 
+\* =============================================================== */ 
+/*
+.slick-slider.slider_nav{
+	max-width: 1000px;
+	margin: 20px auto;
+	}
+	
+.slick-slider.slider_nav{
+	margin-top: 20px;
+	display: flex;
+	}
+
+.slick-slider.slider_nav img{
+	cursor: pointer;
+	}
+*/	
+
+@media screen and (max-width: 599px) {
+	.entry-content .slick_model_image_container{
+		width:100%;	
+		}
+		
+	.entry-content .slick_model_image_container .slick-arrow{
+		font-size: 20px;
+		padding: 10px;
+		}
+	
+	.color_chips_below_slider{
+		padding: 0;
+		}
+	
+	.color_chips_below_slider .single_color.as_link{
+		font-size: 15px;
+		padding: 5px 10px;
+		margin: 4px;
+		}
+	}
