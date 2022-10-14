@@ -233,7 +233,18 @@ add_action('init', function () {
 });
 */
 
-
+/* =============================================================== *\
+   Clean Up WP-Admin-Bar
+\* =============================================================== */
+/*
+function example_admin_bar_remove_logo() {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu( 'wp-logo' );
+    $wp_admin_bar->remove_menu( 'comments' );
+	$wp_admin_bar->remove_menu( 'new-content' );
+}
+add_action( 'wp_before_admin_bar_render', 'example_admin_bar_remove_logo', 0 );
+*/
 /* =============================================================== *\
    Custom-Post-Types
 \* =============================================================== */
