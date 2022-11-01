@@ -2,18 +2,8 @@
 /* =============================================================== *\
    WP-Head
 \* =============================================================== */
-add_action('wp_head', function(){ ?>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-    <!--
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-CXL7DFWQH9"></script>
 
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-CXL7DFWQH9');
-    </script>
-	-->
+add_action('wp_head', function(){ ?>
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="viewport" content="width=device-width" />
 	<meta name="robots" content="index, follow">
@@ -72,6 +62,24 @@ add_action('wp_head', function(){ ?>
 	<?php
 
 });
+
+/* =============================================================== *\
+   Google-Analytics only on LiveSite
+\* =============================================================== */
+if("https://HIER_DIE_LIVE_SITE_URL_EINTRAGEN" == get_home_url()):
+	add_action( 'wp_head', 'add_google_analytics_tag');
+endif;
+
+function add_google_analytics_tag(){ ?>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-HD9HZ7TQTN"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-HD9HZ7TQTN');
+	</script>
+<?php }
 
 /* =============================================================== *\
    Add Core-Block-Styles
