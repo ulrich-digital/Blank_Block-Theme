@@ -546,7 +546,7 @@ add_action( 'init', 'block_template_neufahrzeug' );
 function ud_enqueue_frontend_scripts(){
 	//wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Rubik:ital,wght@0,400;0,500;0,700;1,400;1,500;1,600&display=swap', false );
 	wp_enqueue_style( 'ud-style-frontend', get_template_directory_uri() . '/style-frontend.css', array(), wp_get_theme()->get( 'Version' ) );
-	//wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome/all.css', array(), wp_get_theme()->get( 'Version' ) );
+	//wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome/css/all.css', array(), wp_get_theme()->get( 'Version' ) );
 	//wp_enqueue_style( 'main', get_stylesheet_directory_uri() . "/style.css", [], filemtime( get_stylesheet_directory() . "/style.css" ) );
 	//wp_enqueue_style('slick_slider', get_stylesheet_directory_uri() . '/assets/slick/slick.min.css', [], filemtime( get_stylesheet_directory() . "/css/slick.min.css" ) );
 	//wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap-3.4.1/css/bootstrap.min.css', [], filemtime( get_stylesheet_directory() . "/assets/bootstrap-3.4.1/css/bootstrap.min.css" ) );
