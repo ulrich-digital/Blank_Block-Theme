@@ -89,7 +89,7 @@ if ( ! function_exists( 'uldi_add_block_styles' ) ) :
 		add_theme_support( 'wp-block-styles' );
 	}
 endif;
-add_action( 'after_setup_theme', 'uldi_add_block_styles' );
+//add_action( 'after_setup_theme', 'uldi_add_block_styles' );
 
 /* =============================================================== *\
    Add Admin-Styles
@@ -496,7 +496,17 @@ add_action( 'enqueue_block_editor_assets', 'prefix_editor_assets' );
 /* =============================================================== *\
    Block-Styles
 \* =============================================================== */
-
+/*
+if (function_exists('register_block_style')) {
+    register_block_style(
+        'core/media-text',
+        array(
+            'name'         => 'personal',
+            'label'        => 'Patrick stellt sich vor',
+        )
+    );
+}
+*/
 /* =============================================================== *\
    Block-Pattern
 \* =============================================================== */
@@ -532,6 +542,61 @@ function block_template_neufahrzeug() {
 add_action( 'init', 'block_template_neufahrzeug' );
 */
 
+/* =============================================================== *\ 
+   Allowed-Blocks
+\* =============================================================== */
+function whitelist_blocks() {
+    return array(
+        'acf/slick-slider',
+        'acf/touren_auf_startseite',
+        'acf/seiltrenner',
+        //'acf/seiltrennerheader',
+        //'core/archives',
+        'core/block',
+        //'core/calendar',
+        //'core/categories',
+        //'core/latest-comments',
+        //'core/latest-posts',
+        //'core/rss',
+        //'core/search',
+        //'core/shortcode',
+        //'core/social-link',
+        //'core/tag-cloud',
+        //'core/audio',
+        'core/button',
+        'core/buttons',
+        //'core/freeform',
+        //'core/code',
+        'core/column',
+        'core/columns',
+        'core/file',
+        //'core/gallery',
+        'core/group',
+        'core/heading',
+        //'core/html',
+        //'core/image',
+        'core/list',
+        'core/list-item',
+        'core/media-text',
+        //'core/missing',
+        //'core/more',
+        //'core/nextpage',
+        'core/paragraph',
+        //'core/preformatted',
+        //'core/pullquote',
+        //'core/quote',
+        //'core/separator',
+        //'core/social-links',
+        'core/spacer',
+        //'core/subhead',
+        //'core/table',
+        //'core/text-columns',
+        //'core/verse',
+        //'core/video',
+        //'core-embed/youtube',
+    );
+}
+//add_filter('allowed_block_types_all', 'whitelist_blocks');
 /* =============================================================== *\
 
  	 Frontend
@@ -544,6 +609,10 @@ add_action( 'init', 'block_template_neufahrzeug' );
 \* =============================================================== */
 
 function ud_enqueue_frontend_scripts(){
+    //wp_dequeue_style('global-styles'); // Core-Block-Styles entfernen Achtung, entfernt auch Schrift über theme.json
+    // wp_dequeue_style( 'wp-block-columns' ); // einzelne Core-Block-Styles entfernen
+    // wp_dequeue_style('wp-block-column');
+
 	//wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Rubik:ital,wght@0,400;0,500;0,700;1,400;1,500;1,600&display=swap', false );
 	wp_enqueue_style( 'ud-style-frontend', get_template_directory_uri() . '/style-frontend.css', array(), wp_get_theme()->get( 'Version' ) );
 	//wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome/css/all.css', array(), wp_get_theme()->get( 'Version' ) );
@@ -590,5 +659,12 @@ add_action('wp_enqueue_scripts', 'ud_enqueue_frontend_scripts');
 endif;
 */
 
-
+/* =============================================================== *\ 
+   Title
+\* =============================================================== */
+if(!is_admin()):
+    add_filter('body_class', function ($classes) {
+        return array_merge($classes, array('is_frontend'));
+    });
+endif;
 ?>
