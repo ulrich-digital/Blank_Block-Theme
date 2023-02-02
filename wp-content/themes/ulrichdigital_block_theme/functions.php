@@ -334,28 +334,12 @@ if( function_exists('acf_add_options_page') ) {
  	 ACF - Blocks
 \* =============================================================== */
 /*
-add_action('acf/init', 'my_acf_blocks_init');
-function my_acf_blocks_init() {
 
-    if( function_exists('acf_register_block_type') ) {
-
-		acf_register_block_type( array(
-			'title'			=> 'Alle Neufahrzeuge',
-			'name'			=> 'neufahrzeuge_loop',
-			'render_template'   => 'blocks/acf_neufahrzeuge_loop/block.php',
-			'enqueue_style' => get_stylesheet_directory_uri() . '/blocks/acf_neufahrzeuge_loop/block.css',
-			'enqueue_script'    =>  get_template_directory_uri() . '/blocks/acf_neufahrzeuge_loop/block.js?ver=' . filemtime(get_stylesheet_directory() . '/blocks/acf_neufahrzeuge_loop/block.js'),
-			'mode'			=> 'edit',
-			'supports'		=> [
-				'align'			=> false,
-				'anchor'		=> true,
-				'customClassName'	=> true,
-				'jsx' 			=> true,
-				'mode'		=> false,
-			]
-		));
-    }
+function uldi_load_blocks(){
+	register_block_type(dirname(__FILE__) . '/blocks/acf_seiltrenner');
+	//wp_register_style('block-tip', get_template_directory_uri() . '/blocks/acf_seiltrenner.css');
 }
+add_action('acf/init', 'uldi_load_blocks');
 */
 
 /* =============================================================== *\
