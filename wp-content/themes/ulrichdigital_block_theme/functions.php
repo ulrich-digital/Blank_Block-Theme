@@ -293,6 +293,27 @@ function example_admin_bar_remove_logo() {
 }
 add_action( 'wp_before_admin_bar_render', 'example_admin_bar_remove_logo', 0 );
 */
+
+
+/* =============================================================== *\ 
+   Remove Admin-Menu-Elements
+\* =============================================================== */ 
+/*
+function ud_remove_menus () {
+	global $menu;
+	$restricted = array(__('Beiträge'), __('Kommentare'));
+	end ($menu);
+	while (prev($menu)){
+		$value = explode(' ',$menu[key($menu)][0]);
+		if(in_array($value[0] != NULL?$value[0]:"" , $restricted)){
+			unset($menu[key($menu)]);
+		}
+	}
+}
+add_action('admin_menu', 'ud_remove_menus');
+*/
+
+
 /* =============================================================== *\
    Custom-Post-Types
 \* =============================================================== */
