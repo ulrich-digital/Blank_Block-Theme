@@ -184,6 +184,22 @@ function ud_add_custom_image_sizes() {
 }
 add_action('after_setup_theme', 'ud_add_custom_image_sizes', 11);
 
+
+
+
+/* =============================================================== *\ 
+   Add custom image sizes to backend choose
+\* =============================================================== */
+
+function ud_add_custom_image_sizes_to_backend_choose($sizes) {
+    $custom_sizes = array(
+        'footer_neufahrzeuge_slider_medium' => __('Footer Neufahrzeuge Slider Medium', 'uldi')
+        );
+    return array_merge($sizes, $custom_sizes);
+}
+//add_filter('image_size_names_choose', 'ud_add_custom_image_sizes_to_backend_choose');
+
+
 /* =============================================================== *\
    Enable SVG
 \* =============================================================== */
