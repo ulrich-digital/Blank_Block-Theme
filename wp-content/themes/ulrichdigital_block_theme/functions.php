@@ -355,6 +355,22 @@ function ud_register_post_type_neufarzeuge(){
 }
 */
 
+/* =============================================================== *\ 
+   Add Custom Block Category to Inserter
+\* =============================================================== */
+/*
+add_filter('block_categories_all', function ($categories) {
+    $new_categories = array();
+    $new_categories[] = array(
+        'slug'  => 'here-comes-the-slug',
+        'title' => 'Here comes the Title'
+    );
+    foreach($categories as $single_categorie):
+        $new_categories[] = $single_categorie; // add WP Core default categories
+    endforeach;
+    return $new_categories;
+});
+*/
 /* =============================================================== *\
 
    ACF
