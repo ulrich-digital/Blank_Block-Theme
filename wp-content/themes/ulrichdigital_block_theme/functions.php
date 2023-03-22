@@ -102,7 +102,7 @@ endif;
 add_action('admin_enqueue_scripts', 'uldi_admin_style');
 
 /* =============================================================== *\
- 	 Custom Admin-Logo
+   Custom Admin-Logo
 \* =============================================================== */
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 function my_login_logo() { ?>
@@ -377,7 +377,7 @@ add_filter('block_categories_all', function ($categories) {
 
 \* =============================================================== */
 /* =============================================================== *\
- 	 ACF-Option Page
+   ACF-Option Page
 \* =============================================================== */
 /*
 if( function_exists('acf_add_options_page') ) {
@@ -386,10 +386,9 @@ if( function_exists('acf_add_options_page') ) {
 */
 
 /* =============================================================== *\
- 	 ACF - Blocks
+   ACF - Blocks
 \* =============================================================== */
 /*
-
 function uldi_load_blocks(){
 	register_block_type(dirname(__FILE__) . '/blocks/acf_seiltrenner');
 	//wp_register_style('block-tip', get_template_directory_uri() . '/blocks/acf_seiltrenner.css');
@@ -413,7 +412,7 @@ function add_default_value_to_image_field($field) {
 */
 
 /* =============================================================== *\
-	Add ACF Form Head
+   Add ACF Form Head
 \* =============================================================== */
 /*
 add_action( 'init', 'uldi_add_acf_form_head', 10, 1 );
@@ -456,8 +455,8 @@ add_filter('acf/prepare_field/key=field_62bdc77f826bd', 'modify_marke_field');
 
 
 /* =============================================================== *\
- 	ACF Repeater to array
-	https://wphave.de/acf-block-repeater-daten-ohne-acf-funktion/
+   ACF Repeater to array
+   https://wphave.de/acf-block-repeater-daten-ohne-acf-funktion/
 \* =============================================================== */
 /*
 // ohne ID
@@ -519,7 +518,7 @@ function acf_id_hack($block){
 */
 
 /* =============================================================== *\
- 	 Block-Variations
+   Block-Variations
 \* =============================================================== */
 /*
 function prefix_editor_assets() {
@@ -680,8 +679,14 @@ function ud_enqueue_frontend_scripts(){
 	//wp_enqueue_script( 'gsap',  $gsdu . $path_h1, array('jquery'), filemtime( $gtd. $path_h1 ), false );
 	//wp_enqueue_script( 'isotope',  $gsdu . $path_h1, array('jquery'), filemtime( $gtd. $path_h1 ), false );
 	//wp_enqueue_script( 'slick',  $gsdu . $path_h7, array('jquery'), filemtime( $gtd. $path_h7 ), false );
+
 	//wp_enqueue_script( 'bootstrap',  $gsdu_bootstrap . $path_h8, array('jquery'), filemtime( $gtd_bootstrap. $path_h8 ), true );
 	//wp_enqueue_script( 'bootstrap-slider',  $gsdu_bootstrap_slider . $path_h9, array('jquery'), filemtime( $gtd_bootstrap_slider. $path_h9 ), true );
+
+	// Dummy-Block
+	wp_enqueue_script('block_dummy',  get_stylesheet_directory_uri() . "/blocks/dummy-block/dummy.js", array('jquery'), filemtime(get_template_directory() . "/blocks/dummy-block/dummy.js"), true);
+
+	
 	wp_enqueue_script( 'ulrich_digital',  $gsdu . $path_h5, array('jquery'), filemtime( $gtd. $path_h5 ), true );
 }
 add_action('wp_enqueue_scripts', 'ud_enqueue_frontend_scripts');
