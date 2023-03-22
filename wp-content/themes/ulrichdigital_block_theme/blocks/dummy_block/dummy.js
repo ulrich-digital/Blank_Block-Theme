@@ -1,5 +1,5 @@
 /* =============================================================== *\
- 	 Include this .js File in function
+   ! Include this File with functions.php
 \* =============================================================== */
 
 jQuery(document).ready(function($){
