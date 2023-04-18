@@ -184,6 +184,10 @@ function ud_add_custom_image_sizes() {
 }
 add_action('after_setup_theme', 'ud_add_custom_image_sizes', 11);
 
+/* =============================================================== *\ 
+   Disable image size threshold
+\* =============================================================== */
+add_filter('big_image_size_threshold', '__return_false');
 
 
 
