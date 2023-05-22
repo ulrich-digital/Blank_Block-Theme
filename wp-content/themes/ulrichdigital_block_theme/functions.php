@@ -4,7 +4,6 @@
 \* =============================================================== */
 
 add_action('wp_head', function(){ ?>
-	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="viewport" content="width=device-width" />
 	<meta name="robots" content="index, follow">
 
