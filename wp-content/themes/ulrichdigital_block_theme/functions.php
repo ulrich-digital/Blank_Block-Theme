@@ -195,6 +195,15 @@ function ud_add_svg_to_upload_mimes($upload_mimes){
 }
 add_filter('upload_mimes', 'ud_add_svg_to_upload_mimes');
 
+
+/* =============================================================== *\ 
+   Add Custom Admin Footer
+\* =============================================================== */ 
+
+function backend_entwickelt_mit_herz( $text ) {
+	return ('<span style="color:black;">Entwickelt mit </span><span style="color: red;font-size:20px;vertical-align:-3px">&hearts;</span><span style="color:black;"</span><span> von <a href="https://ulrich.digital" target="_blank">ulrich.digital</a></span>' );
+}
+add_filter( 'admin_footer_text', 'backend_entwickelt_mit_herz' );
 /* =============================================================== *\
    Regenerate image sizes
 \* =============================================================== */
