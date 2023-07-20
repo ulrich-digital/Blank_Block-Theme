@@ -7,6 +7,7 @@
    --secondary-color: #00ff00;
 }
 
+
 /* =============================================================== *
    Basic-HTML
    Grundlegende CSS-Stile für HTML-Tags
@@ -19,7 +20,8 @@ strong{}
 
 em{}
 
-inoput{}
+input{}
+
 
 /* =============================================================== *
    Basic-Wordpress
@@ -28,6 +30,7 @@ inoput{}
 .entry-content {}
 
 .wp-block-image {}
+
 
 /* =============================================================== *
    Theme-Styling
@@ -53,6 +56,7 @@ Theme-Font: 'Lato'
     font-family: 'Lato';
 }
 
+
 /* =============================================================== *
    Components
    Wiederverwendbare Komponenten-Stile (Block-Styles)
@@ -63,12 +67,10 @@ Block-Style: Bild drehen Image
 */
 .is-style-rotate_me{}
 
+
 /* =============================================================== *
    Layout
    Stile für Layout-Elemente wie Gruppen, Grids, Spalten usw.
-
-.container { width: 1200px; }
-.row { display: flex; }
 * =============================================================== */
 
 /* 
@@ -76,24 +78,22 @@ Block-Style: Masonry Group
 */
 .wp-block-group.is-style-masonry {}
 
-/* =============================================================== *
-Module
-Stile für modulare Elemente wie Slider, Tabs usw.
 
-.slider { height: 500px; }
-.tabs { display: flex; }
-* =============================================================== */
 /* =============================================================== *
-Seitenstile
-Spezifische Stile für bestimmte Seiten oder Seitentypen
-
-.impressum { font-size: 16px; }
-.contact-page { background-color: #ffffff; }
+   Module
+   Stile für modulare Elemente wie Slider, Tabs usw.
 * =============================================================== */
+
+
 /* =============================================================== *
-ID's
-Stile für Elemente mit einer spezifischen ID
-
-#element { color: #ff0000; }
-#weiteres_element { font-size: 20px; }
+   Seitenstile
+   Spezifische Stile für bestimmte Seiten oder Seitentypen
 * =============================================================== */
+
+
+/* =============================================================== *
+   ID's
+   Stile für Elemente mit einer spezifischen ID
+* =============================================================== */
+
+
