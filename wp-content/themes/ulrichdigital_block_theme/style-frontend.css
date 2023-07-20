@@ -1,8 +1,99 @@
-*{
-	color:black;
+/* =============================================================== *
+   Variables
+   Globale Variablen für wiederkehrende Werte
+* =============================================================== */
+:root{
+   --primary-color: #ff0000;
+   --secondary-color: #00ff00;
 }
 
-.editor-styles-wrapper, 
-.editor-styles-wrapper{
-	color:black;
+/* =============================================================== *
+   Basic-HTML
+   Grundlegende CSS-Stile für HTML-Tags
+* =============================================================== */
+h1, h2, h3 {}
+
+p {}
+
+strong{}
+
+em{}
+
+inoput{}
+
+/* =============================================================== *
+   Basic-Wordpress
+   Spezifische Stile für WordPress-Elemente
+* =============================================================== */
+.entry-content {}
+
+.wp-block-image {}
+
+/* =============================================================== *
+   Theme-Styling
+   Stile, die spezifisch für das Theme sind
+   Alle Angaben, welche in der theme.json definiert sind, wenn keine Block-Styles 
+* =============================================================== */
+
+header {}
+
+footer {}
+
+
+/*
+Theme-Color: Dark Mulberry Background
+*/
+.has-dark-mulberry-background-color {}
+
+
+/*
+Theme-Font: 'Lato'
+*/
+.has-lato-font-family {
+    font-family: 'Lato';
 }
+
+/* =============================================================== *
+   Components
+   Wiederverwendbare Komponenten-Stile (Block-Styles)
+* =============================================================== */
+/*
+Block-Style: [Label] [Block]
+Block-Style: Bild drehen Image
+*/
+.is-style-rotate_me{}
+
+/* =============================================================== *
+   Layout
+   Stile für Layout-Elemente wie Gruppen, Grids, Spalten usw.
+
+.container { width: 1200px; }
+.row { display: flex; }
+* =============================================================== */
+
+/* 
+Block-Style: Masonry Group
+*/
+.wp-block-group.is-style-masonry {}
+
+/* =============================================================== *
+Module
+Stile für modulare Elemente wie Slider, Tabs usw.
+
+.slider { height: 500px; }
+.tabs { display: flex; }
+* =============================================================== */
+/* =============================================================== *
+Seitenstile
+Spezifische Stile für bestimmte Seiten oder Seitentypen
+
+.impressum { font-size: 16px; }
+.contact-page { background-color: #ffffff; }
+* =============================================================== */
+/* =============================================================== *
+ID's
+Stile für Elemente mit einer spezifischen ID
+
+#element { color: #ff0000; }
+#weiteres_element { font-size: 20px; }
+* =============================================================== */
