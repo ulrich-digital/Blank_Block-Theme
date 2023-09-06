@@ -677,7 +677,7 @@ function ud_enqueue_frontend_scripts(){
 	//wp_enqueue_script( 'bootstrap-slider',  $gsdu_bootstrap_slider . $path_h9, array('jquery'), filemtime( $gtd_bootstrap_slider. $path_h9 ), true );
 
 	// Dummy-Block
-	wp_enqueue_script('block_dummy',  get_stylesheet_directory_uri() . "/blocks/dummy-block/dummy.js", array('jquery'), filemtime(get_template_directory() . "/blocks/dummy-block/dummy.js"), true);
+	//wp_enqueue_script('block_dummy',  get_stylesheet_directory_uri() . "/blocks/dummy-block/dummy.js", array('jquery'), filemtime(get_template_directory() . "/blocks/dummy-block/dummy.js"), true);
 
 	
 	wp_enqueue_script( 'ulrich_digital',  $gsdu . $path_h5, array('jquery'), filemtime( $gtd. $path_h5 ), true );
