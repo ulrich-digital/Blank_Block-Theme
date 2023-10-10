@@ -1,3 +1,7 @@
+/*
+Achtung: Browser unter iOS, benötigen u.a. für hypens: auto; zusätzlich ein -webkit-hyphens: auto;
+*/
+
 /* =============================================================== *
    Variables
    Globale Variablen für wiederkehrende Werte
