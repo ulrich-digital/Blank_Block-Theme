@@ -38,5 +38,38 @@ function fehlendes_title_attribute_hinzufuegen() {
 // Aufruf der Funktion
 //fehlendes_title_attribute_hinzufuegen();
 
+    /* =============================================================== *\ 
+       DEVELOPMENT: 
+       - Mobile Menü immer geöffnet
+    \* =============================================================== */
+    var bodyElement = $("body");
+    var htmlElement = $("html");
+
+    function addClassesIfMissing() {
+        var responsiveContainer = $(".wp-block-navigation__responsive-container");
+        if (responsiveContainer.length > 0) {
+            responsiveContainer.addClass("has-modal-open is-menu-open");
+            bodyElement.addClass("has-modal-open is-menu-open"); // Verwendung der gespeicherten Referenzen
+            htmlElement.addClass("has-modal-open"); // Verwendung der gespeicherten Referenzen
+        }
+    }
+
+    function startMutationObserver() {
+        var targetNode = document.body;
+        var config = { childList: true, subtree: true };
+        var observer = new MutationObserver(function(mutationsList) {
+            for (var mutation of mutationsList) {
+                if (mutation.type === 'childList') {
+                    addClassesIfMissing();
+                    break; // Hinzugefügt, um den Observer nach der ersten Mutation zu stoppen
+                }
+            }
+        });
+        observer.observe(targetNode, config);
+        addClassesIfMissing();
+    }
+
+    // Observer beim Laden des Dokuments starten
+    //startMutationObserver();
 
 }); //jQuery(document).ready
