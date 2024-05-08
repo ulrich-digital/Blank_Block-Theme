@@ -15,6 +15,9 @@
 			"contentSize": "100%",
 			"wideSize": "1000px"
 		},
+		"spacing": {
+			"units": [ "px", "em", "rem", "vw", "%" ]
+		},
 		"color": {
 			"palette": [
                     {
