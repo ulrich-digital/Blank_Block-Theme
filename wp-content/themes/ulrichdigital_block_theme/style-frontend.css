@@ -27,6 +27,55 @@ em{}
 input{}
 
 
+/* Formularfelder */
+input,
+textarea{
+    margin: 10px 20px;
+    padding: 10px 16px;
+    border: none;
+    line-height: 1em;
+    }
+
+textarea{
+    line-height: 1em;
+}
+
+/* Stil für den Placeholder-Text */
+textarea::-webkit-input-placeholder,
+input::-webkit-input-placeholder { /* Webkit-basierte Browser (Chrome, Safari, Edge) */
+    }
+
+textarea::-moz-placeholder,
+input::-moz-placeholder { /* Firefox 19+ */
+    }
+
+textarea:-ms-input-placeholder,
+input:-ms-input-placeholder { /* Internet Explorer und Microsoft Edge */
+    }
+
+textarea:-moz-placeholder,
+input:-moz-placeholder { /* Firefox 18- */
+    }
+
+textarea:focus,
+input:focus  {
+    outline: none; /* Entfernt den Standard-Fokus-Rahmen */
+    border: none;  /* Entfernt die eigene Border (falls vorhanden) */
+    }
+
+input[type="submit"]{
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    padding: .7rem 1.4rem;
+    }
+
+input[type="submit"]:hover{
+    cursor: pointer;
+    }
+
 /* =============================================================== *
    Basic-Wordpress
    Spezifische Stile für WordPress-Elemente
