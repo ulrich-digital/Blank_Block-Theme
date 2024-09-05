@@ -99,3 +99,41 @@ blockquote {
 :focus:not(:focus-visible) {
     outline: none;
 }
+
+
+/* =============================================================== *\ 
+   Input-Elemente
+\* =============================================================== */
+
+/* Autfill-Hintergrund bei input-Feldern */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset !important; /* Setzt den Autofill-Hintergrund auf weiß */
+    -webkit-text-fill-color: black !important; /* Setzt den Text auf schwarz */
+}
+
+/* Entfernt die Pfeile (Spinners) in WebKit-basierten Browsern (Chrome, Safari, Edge) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Entfernt die Pfeile in Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+/* Dropdown-Pfeil bei select-Elementen */
+/* Entfernt den Standard-Pfeil in WebKit-basierten Browsern */
+select::-webkit-inner-spin-button,
+select::-webkit-appearance {
+    -webkit-appearance: none;
+}
+
+/* Entfernt den Standard-Pfeil in Firefox */
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
