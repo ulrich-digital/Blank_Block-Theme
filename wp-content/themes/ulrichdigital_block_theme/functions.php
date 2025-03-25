@@ -648,7 +648,8 @@ function ud_enqueue_frontend_scripts(){
 	wp_enqueue_style( 'ud-style-reset', get_stylesheet_directory_uri() . "/style-reset.css", [], filemtime( get_stylesheet_directory() . "/style-reset.css" ) );
 	wp_enqueue_style( 'ud-style-main', get_stylesheet_directory_uri() . "/style.css", [], filemtime( get_stylesheet_directory() . "/style.css" ) );
 	wp_enqueue_style( 'ud-style-frontend', get_template_directory_uri() . '/style-frontend.css', array(), wp_get_theme()->get( 'Version' ) );
-	//wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/fonts/fontawesome/css/all.css', array(), wp_get_theme()->get( 'Version' ) );
+	// Fontawesome, inkl. Brands, Normal und Sharp (duotone ist auskommentiert)
+	wp_enqueue_style( 'fontawesome_bundle', get_template_directory_uri() . '/assets/fonts/fontawesome.bundle.css', [], filemtime( get_stylesheet_directory() . "/assets/fonts/fontawesome.bundle.css" ) );
 	//wp_enqueue_style('slick_slider', get_stylesheet_directory_uri() . '/assets/slick/slick.min.css', [], filemtime( get_stylesheet_directory() . "/assets/slick/slick.min.css" ) );
 	//wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/assets/bootstrap-3.4.1/css/bootstrap.min.css', [], filemtime( get_stylesheet_directory() . "/assets/bootstrap-3.4.1/css/bootstrap.min.css" ) );
 	//wp_enqueue_style('bootstrap-slider', get_stylesheet_directory_uri() . '/css/bootstrap-slider.min.css', [], filemtime( get_stylesheet_directory() . "/css/bootstrap-slider.min.css" ) );
