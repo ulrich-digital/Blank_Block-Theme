@@ -16,8 +16,9 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: subpixel-antialiased; /* Safari, Chrome */
+	-moz-osx-font-smoothing: auto;                /* Firefox (kein subpixel support, aber auto ≈ subpixel) */
+	text-rendering: optimizeLegibility;           /* Optional: bessere Kerning/Lesbarkeit */
     text-size-adjust: 100%;
     line-height: 1.5;
 }
