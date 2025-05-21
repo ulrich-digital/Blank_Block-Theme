@@ -74,12 +74,16 @@ endif;
 /* =============================================================== *\
    Add Admin-Styles
 \* =============================================================== */
-if ( ! function_exists( 'uldi_admin_style' ) ) :
-	function uldi_admin_style() {
-		wp_enqueue_style('admin-styles', get_template_directory_uri().'/style-admin.css');
-	}
-endif;
-add_action('admin_enqueue_scripts', 'uldi_admin_style');
+add_action('enqueue_block_assets', function () {
+    if (is_admin()) {
+        wp_enqueue_style(
+            'admin-styles',
+            get_template_directory_uri() . '/style-admin.css',
+            [],
+            filemtime(get_template_directory() . '/style-admin.css')
+        );
+    }
+});
 
 /* =============================================================== *\
    Custom Admin-Logo
