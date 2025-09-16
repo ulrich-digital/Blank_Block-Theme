@@ -2,6 +2,122 @@
    CSS für Admin 
 \* =============================================================== */ 
 
+/* Farbschema anschauen unter ulrichdigital_block_theme > color_system.html */
+:root {
+
+  /* Positive (Green) */
+  --wp--preset--color--ui-positive-100: #fbfefc;
+  --wp--preset--color--ui-positive-200: #e6f9ec;
+  --wp--preset--color--ui-positive-300: #d1f3da;
+  --wp--preset--color--ui-positive-400: #b0ebc6;
+  --wp--preset--color--ui-positive-500: #30a46c;
+  --wp--preset--color--ui-positive-600: #299764;
+  --wp--preset--color--ui-positive-700: #18794e;
+  --wp--preset--color--ui-positive-800: #193b2d;
+  --wp--preset--color--ui-positive-900: #0d1912;
+
+  /* Warning (Amber) */
+  --wp--preset--color--ui-warning-100: #fefdfb;
+  --wp--preset--color--ui-warning-200: #fef6e7;
+  --wp--preset--color--ui-warning-300: #ffedc7;
+  --wp--preset--color--ui-warning-400: #ffd386;
+  --wp--preset--color--ui-warning-500: #f5a623;
+  --wp--preset--color--ui-warning-600: #e08d00;
+  --wp--preset--color--ui-warning-700: #ad5700;
+  --wp--preset--color--ui-warning-800: #5f2a00;
+  --wp--preset--color--ui-warning-900: #341500;
+
+  /* Error (Red) */
+  --wp--preset--color--ui-error-100: #fffcfc;
+  --wp--preset--color--ui-error-200: #fef0ef;
+  --wp--preset--color--ui-error-300: #fdd8d7;
+  --wp--preset--color--ui-error-400: #fbb5b4;
+  --wp--preset--color--ui-error-500: #e5484d;
+  --wp--preset--color--ui-error-600: #d93d42;
+  --wp--preset--color--ui-error-700: #cd2b31;
+  --wp--preset--color--ui-error-800: #381316;
+  --wp--preset--color--ui-error-900: #1f0a0a;
+
+  /* Info (Blue) */
+  --wp--preset--color--ui-info-100: #fbfdff;
+  --wp--preset--color--ui-info-200: #edf6ff;
+  --wp--preset--color--ui-info-300: #e1f0ff;
+  --wp--preset--color--ui-info-400: #cee7fe;
+  --wp--preset--color--ui-info-500: #0091ff;
+  --wp--preset--color--ui-info-600: #0880ea;
+  --wp--preset--color--ui-info-700: #0b68cb;
+  --wp--preset--color--ui-info-800: #113264;
+  --wp--preset--color--ui-info-900: #0a0e1c;
+
+  /* Neutral (Gray) */
+  --wp--preset--color--ui-neutral-100: #fcfcfc;
+  --wp--preset--color--ui-neutral-200: #f8f9fa;
+  --wp--preset--color--ui-neutral-300: #f1f3f5;
+  --wp--preset--color--ui-neutral-400: #e6e8eb;
+  --wp--preset--color--ui-neutral-500: #9ba1a6;
+  --wp--preset--color--ui-neutral-600: #6c7278;
+  --wp--preset--color--ui-neutral-700: #464b50;
+  --wp--preset--color--ui-neutral-800: #11181c;
+  --wp--preset--color--ui-neutral-900: #0d0f11;
+}
+
+/* =============================================================== *\
+    Alternative: Open Color
+\* =============================================================== */
+/*
+:root {
+  --wp--preset--color--ui-positive-100: #ebfbee;
+  --wp--preset--color--ui-positive-200: #d3f9d8;
+  --wp--preset--color--ui-positive-300: #b2f2bb;
+  --wp--preset--color--ui-positive-400: #8ce99a;
+  --wp--preset--color--ui-positive-500: #69db7c;
+  --wp--preset--color--ui-positive-600: #51cf66;
+  --wp--preset--color--ui-positive-700: #40c057;
+  --wp--preset--color--ui-positive-800: #37b24d;
+  --wp--preset--color--ui-positive-900: #2f9e44;
+
+  --wp--preset--color--ui-warning-100: #fff9db;
+  --wp--preset--color--ui-warning-200: #fff3bf;
+  --wp--preset--color--ui-warning-300: #ffec99;
+  --wp--preset--color--ui-warning-400: #ffe066;
+  --wp--preset--color--ui-warning-500: #ffd43b;
+  --wp--preset--color--ui-warning-600: #fcc419;
+  --wp--preset--color--ui-warning-700: #fab005;
+  --wp--preset--color--ui-warning-800: #f59f00;
+  --wp--preset--color--ui-warning-900: #f08c00;
+
+  --wp--preset--color--ui-error-100: #fff5f5;
+  --wp--preset--color--ui-error-200: #ffe3e3;
+  --wp--preset--color--ui-error-300: #ffc9c9;
+  --wp--preset--color--ui-error-400: #ffa8a8;
+  --wp--preset--color--ui-error-500: #ff8787;
+  --wp--preset--color--ui-error-600: #ff6b6b;
+  --wp--preset--color--ui-error-700: #fa5252;
+  --wp--preset--color--ui-error-800: #f03e3e;
+  --wp--preset--color--ui-error-900: #e03131;
+
+  --wp--preset--color--ui-info-100: #e7f5ff;
+  --wp--preset--color--ui-info-200: #d0ebff;
+  --wp--preset--color--ui-info-300: #a5d8ff;
+  --wp--preset--color--ui-info-400: #74c0fc;
+  --wp--preset--color--ui-info-500: #4dabf7;
+  --wp--preset--color--ui-info-600: #339af0;
+  --wp--preset--color--ui-info-700: #228be6;
+  --wp--preset--color--ui-info-800: #1c7ed6;
+  --wp--preset--color--ui-info-900: #1971c2;
+
+  --wp--preset--color--ui-neutral-100: #f8f9fa;
+  --wp--preset--color--ui-neutral-200: #f1f3f5;
+  --wp--preset--color--ui-neutral-300: #e9ecef;
+  --wp--preset--color--ui-neutral-400: #dee2e6;
+  --wp--preset--color--ui-neutral-500: #ced4da;
+  --wp--preset--color--ui-neutral-600: #adb5bd;
+  --wp--preset--color--ui-neutral-700: #868e96;
+  --wp--preset--color--ui-neutral-800: #495057;
+  --wp--preset--color--ui-neutral-900: #343a40;
+}
+*/
+
 body.wp-admin{
 	background: #eee;
 	font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
