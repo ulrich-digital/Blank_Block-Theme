@@ -1,0 +1,36 @@
+/* =============================================================== *\
+   Variablen (Farben, Spacing, Radius, Shadow)
+\* =============================================================== */
+
+:root {
+	// Colors
+    --wp--preset--color--neutral-100: #ebf6f3; /* sehr hell, fast weißlich mit Hauch Farbe */
+    --wp--preset--color--neutral-200: #d9e1e0; /* zartes Grau */
+    --wp--preset--color--neutral-300: #bfc7c6; /* helles Grau */
+    --wp--preset--color--neutral-400: #9ea5a4; /* mittleres Grau */
+    --wp--preset--color--neutral-500: #7f8685; /* gedecktes Grau */
+    --wp--preset--color--neutral-600: #5f6564; /* dunkleres Grau */
+    --wp--preset--color--neutral-700: #3e3e3e; /* dunkelgrau (dein Wert) */
+    --wp--preset--color--neutral-800: #383838; /* fast schwarz (dein Wert) */
+    --wp--preset--color--neutral-900: #2c2c2c; /* near-black */
+
+    // Shadows
+	--shadow-100: 0 1px 2px rgba(0, 0, 0, 0.06);
+	--shadow-200: 0 1px 3px rgba(0, 0, 0, 0.08);
+	--shadow-300: 0 2px 4px rgba(0, 0, 0, 0.1);
+	--shadow-400: 0 3px 6px rgba(0, 0, 0, 0.12);
+	--shadow-500: 0 4px 8px rgba(0, 0, 0, 0.14);
+	--shadow-700: 0 6px 12px rgba(0, 0, 0, 0.18);
+	--shadow-900: 0 8px 16px rgba(0, 0, 0, 0.22);
+}
+
+/* =============================================================== *\
+   Anpassungen für Mobile (Variablen)
+\* =============================================================== */
+@media screen and (max-width: 800px) {
+	:root {
+		// Colors
+
+		// Shadows
+	}
+}

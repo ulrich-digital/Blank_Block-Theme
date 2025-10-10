@@ -1,0 +1,17 @@
+{
+  "name": "ulrichdigital_block_theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+"scripts": {
+  "build": "sass sass/style.scss css/style.css --no-source-map",
+  "watch": "sass --watch sass/style.scss:css/style.css --no-source-map"
+},
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.92.1"
+  }
+}

@@ -1,0 +1,36 @@
+// SCSS-Kompilierung starten:
+
+// 1. Falls noch nicht installiert:
+// npm install sass --save-dev
+
+// 2. Zum package.json navigieren
+// cd .../ulrichdigital_block_theme
+
+
+// 3. Im Theme (mit package.json):
+// npm run watch   → beobachtet sass/style.scss und kompiliert nach css/style.css
+// npm run build   → einmalig kompilieren
+
+
+/* =============================================================== *\
+   Reset & Base
+\* =============================================================== */
+@use 'reset';
+@use 'base';
+
+/* =============================================================== *\
+   Layout & Struktur
+\* =============================================================== */
+@use 'variables';
+@use 'layout';
+@use 'header';
+@use 'footer';
+@use 'page';
+
+
+/* =============================================================== *\
+   Komponenten
+\* =============================================================== */
+//@use 'components/accordion';
+
+
