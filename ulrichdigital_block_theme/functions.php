@@ -159,16 +159,32 @@ add_action( "admin_enqueue_scripts", 'uldi_enqueue_backend_scripts');
    Bildqualität für generierte Bilder festlegen
     (betrifft Thumbnails, Medium, Large etc.)
 \* =============================================================== */
-
+/**
+ * Bevorzugte Bildformate definieren (AVIF > WebP > JPEG)
+ */
+add_filter( 'image_editor_output_format', function( $formats ) {
+    return [
+        'image/jpeg' => 'image/avif',
+		'image/webp' => 'image/avif',
+        'image/png'  => 'image/avif',
+    ];
+});
+/**
+ * Qualität pro Format festlegen
+ */
 add_filter( 'wp_editor_set_quality', function( $quality, $mime_type ) {
+    if ( 'image/avif' === $mime_type ) {
+        return 90; // AVIF: Hohe Qualität, trotzdem kleine Dateien
+    }
     if ( 'image/webp' === $mime_type ) {
-        return 95; // Qualität für WebP
+        return 95;
     }
     if ( 'image/jpeg' === $mime_type ) {
-        return 85; // Qualität für JPEG
+        return 85;
     }
     return $quality;
 }, 10, 2 );
+
 
 /* =============================================================== *\
    Add custom image sizes
