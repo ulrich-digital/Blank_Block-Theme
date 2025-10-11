@@ -155,7 +155,20 @@ function uldi_enqueue_backend_scripts(){
 }
 add_action( "admin_enqueue_scripts", 'uldi_enqueue_backend_scripts');
 
+/* =============================================================== *\
+   Bildqualität für generierte Bilder festlegen
+    (betrifft Thumbnails, Medium, Large etc.)
+\* =============================================================== */
 
+add_filter( 'wp_editor_set_quality', function( $quality, $mime_type ) {
+    if ( 'image/webp' === $mime_type ) {
+        return 95; // Qualität für WebP
+    }
+    if ( 'image/jpeg' === $mime_type ) {
+        return 85; // Qualität für JPEG
+    }
+    return $quality;
+}, 10, 2 );
 
 /* =============================================================== *\
    Add custom image sizes
@@ -172,6 +185,7 @@ add_action('after_setup_theme', 'ud_add_custom_image_sizes', 11);
    Disable image size threshold
 \* =============================================================== */
 add_filter('big_image_size_threshold', '__return_false');
+
 
 
 
