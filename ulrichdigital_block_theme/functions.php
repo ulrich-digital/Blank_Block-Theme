@@ -2,7 +2,6 @@
 /* =============================================================== *\
    WP-Head
 \* =============================================================== */
-
 add_action('wp_head', function(){ ?>
 	<meta name="viewport" content="width=device-width" />
 	<meta name="robots" content="index, follow">
@@ -43,6 +42,7 @@ add_action('wp_head', function(){ ?>
 
 });
 
+
 /* =============================================================== *\
    Google-Analytics only on LiveSite
 \* =============================================================== */
@@ -61,6 +61,7 @@ function add_google_analytics_tag(){ ?>
 	</script>
 <?php }
 
+
 /* =============================================================== *\
    Add Core-Block-Styles
 \* =============================================================== */
@@ -70,6 +71,7 @@ if ( ! function_exists( 'uldi_add_block_styles' ) ) :
 	}
 endif;
 //add_action( 'after_setup_theme', 'uldi_add_block_styles' );
+
 
 /* =============================================================== *\
    Add Admin-Styles
@@ -84,6 +86,7 @@ add_action('enqueue_block_assets', function () {
         );
     }
 });
+
 
 /* =============================================================== *\
    Custom Admin-Logo
@@ -101,14 +104,15 @@ function my_login_logo() { ?>
     </style>
 <?php }
 
+
 /* =============================================================== *\ 
    Custom Admin-Logo link to Home URL 
 \* =============================================================== */
-
 function my_login_logo_url() {
     return home_url();
 }
 add_filter( 'login_headerurl', 'my_login_logo_url' );
+
 
 /* =============================================================== *\
  	 Custom-Logo
@@ -155,13 +159,11 @@ function uldi_enqueue_backend_scripts(){
 }
 add_action( "admin_enqueue_scripts", 'uldi_enqueue_backend_scripts');
 
+
 /* =============================================================== *\
    Bildqualität für generierte Bilder festlegen
     (betrifft Thumbnails, Medium, Large etc.)
 \* =============================================================== */
-/**
- * Bevorzugte Bildformate definieren (AVIF > WebP > JPEG)
- */
 add_filter( 'image_editor_output_format', function( $formats ) {
     return [
         'image/jpeg' => 'image/avif',
@@ -169,9 +171,7 @@ add_filter( 'image_editor_output_format', function( $formats ) {
         'image/png'  => 'image/avif',
     ];
 });
-/**
- * Qualität pro Format festlegen
- */
+
 add_filter( 'wp_editor_set_quality', function( $quality, $mime_type ) {
     if ( 'image/avif' === $mime_type ) {
         return 90; // AVIF: Hohe Qualität, trotzdem kleine Dateien
@@ -189,13 +189,11 @@ add_filter( 'wp_editor_set_quality', function( $quality, $mime_type ) {
 /* =============================================================== *\
    Add custom image sizes
 \* =============================================================== */
-
 function ud_add_custom_image_sizes() {
-	//add_image_size('footer_neufahrzeuge_slider_medium', 800, 600, true);
-	//add_image_size('footer_neufahrzeuge_slider_full', 1200, 900, true);
-	//add_image_size('neufahrzeuge_loop_medium', 400, 300, true);
+	//add_image_size('neuer_bilder_slug', 800, 600, true);
 }
-add_action('after_setup_theme', 'ud_add_custom_image_sizes', 11);
+//add_action('after_setup_theme', 'ud_add_custom_image_sizes', 11);
+
 
 /* =============================================================== *\ 
    Disable image size threshold
@@ -203,15 +201,12 @@ add_action('after_setup_theme', 'ud_add_custom_image_sizes', 11);
 add_filter('big_image_size_threshold', '__return_false');
 
 
-
-
 /* =============================================================== *\ 
    Add custom image sizes to backend choose
 \* =============================================================== */
-
 function ud_add_custom_image_sizes_to_backend_choose($sizes) {
     $custom_sizes = array(
-        'footer_neufahrzeuge_slider_medium' => __('Footer Neufahrzeuge Slider Medium', 'uldi')
+        'neuer_bilder_slug' => __('Neuer Bilderslug', 'uldi')
         );
     return array_merge($sizes, $custom_sizes);
 }
@@ -221,7 +216,6 @@ function ud_add_custom_image_sizes_to_backend_choose($sizes) {
 /* =============================================================== *\
    Enable SVG
 \* =============================================================== */
-
 function ud_add_svg_to_upload_mimes($upload_mimes){
 	$upload_mimes['svg'] = 'image/svg+xml';
 	$upload_mimes['svgz'] = 'image/svg+xml';
@@ -233,11 +227,12 @@ add_filter('upload_mimes', 'ud_add_svg_to_upload_mimes');
 /* =============================================================== *\ 
    Add Custom Admin Footer
 \* =============================================================== */ 
-
 function backend_entwickelt_mit_herz( $text ) {
 	return ('<span style="color:black;">Entwickelt mit </span><span style="color: red;font-size:20px;vertical-align:-3px">&hearts;</span><span style="color:black;"</span><span> von <a href="https://ulrich.digital" target="_blank">ulrich.digital</a></span>' );
 }
 add_filter( 'admin_footer_text', 'backend_entwickelt_mit_herz' );
+
+
 /* =============================================================== *\
    Regenerate image sizes
 \* =============================================================== */
@@ -307,6 +302,7 @@ add_action('init', function () {
     }
 });
 */
+
 
 /* =============================================================== *\
    Clean Up WP-Admin-Bar
@@ -382,6 +378,7 @@ function ud_register_post_type_neufarzeuge(){
 }
 */
 
+
 /* =============================================================== *\ 
    Add Custom Block Category to Inserter
 \* =============================================================== */
@@ -398,151 +395,7 @@ add_filter('block_categories_all', function ($categories) {
     return $new_categories;
 });
 */
-/* =============================================================== *\
 
-   ACF
-
-\* =============================================================== */
-/* =============================================================== *\
-   ACF-Option Page
-\* =============================================================== */
-/*
-if( function_exists('acf_add_options_page') ) {
-  acf_add_options_page();
-}
-*/
-
-/* =============================================================== *\
-   ACF - Blocks
-\* =============================================================== */
-/*
-function uldi_load_blocks(){
-	register_block_type(dirname(__FILE__) . '/blocks/acf_seiltrenner');
-	//wp_register_style('block-tip', get_template_directory_uri() . '/blocks/acf_seiltrenner.css');
-}
-add_action('acf/init', 'uldi_load_blocks');
-*/
-
-/* =============================================================== *\
-   ???
-\* =============================================================== */
-/*
-add_action('acf/render_field_settings/type=image', 'add_default_value_to_image_field');
-function add_default_value_to_image_field($field) {
-	acf_render_field_setting( $field, array(
-		'label'			=> 'Default Image',
-		'instructions'		=> 'Appears when creating a new post',
-		'type'			=> 'image',
-		'name'			=> 'default_value',
-	));
-}
-*/
-
-/* =============================================================== *\
-   Add ACF Form Head
-\* =============================================================== */
-/*
-add_action( 'init', 'uldi_add_acf_form_head', 10, 1 );
-function uldi_add_acf_form_head(){
-	if(!is_admin()){
-		// wird bei allen Seiten geladen, keine andere Lösung möglich
-		acf_form_head();
-	}
-}
-*/
-
-/* =============================================================== *\
-   ACF Form
-   Overwrite dummy Form-Fields
-\* =============================================================== */
-/*
-function find_the_ID(){
-	if (defined('NEUFAHRZEUG_ID')):
-    	$post_id = NEUFAHRZEUG_ID;
-	else:
-		$post_id = get_the_ID();
-	endif;
-	return $post_id;
-}
-
-// Marke
-function modify_marke_field($field){
-	$blocks = parse_blocks( get_the_content(find_the_ID()) );
-	foreach ( $blocks as $block ) :
-		if ( 'acf/neufahrzeug-short-card' === $block['blockName'] ) {
-			$marke = $block['attrs']['data']['marke'];
-			$field['value'] = $marke;
-		}
-	endforeach;
-    return $field;
-}
-add_filter('acf/prepare_field/key=field_62bdc77f826bd', 'modify_marke_field');
-*/
-
-
-
-/* =============================================================== *\
-   ACF Repeater to array
-   https://wphave.de/acf-block-repeater-daten-ohne-acf-funktion/
-\* =============================================================== */
-/*
-// ohne ID
-if ( ! function_exists( 'get_acf_block_repeater_with_id' ) ) :
-	function get_acf_block_repeater_with_id( $block_name, $repeater_key, $sub_fields, $post_id ) {
-		$build_beautiful_array = array();
-		$repeater_value = get_acf_block_setting_with_id( $block_name, $repeater_key, $post_id );
-		if( $repeater_value ) {
-			for( $i=0; $i < $repeater_value; $i++ ) {
-				foreach( $sub_fields as $sub_field => $sub_field_value ):
-					if( array_key_exists( $sub_field, $sub_fields ) ) {
-						$meta_key = $repeater_key . '_' . $i . '_' . $sub_field_value;
-						$sub_field_meta = get_acf_block_setting_with_id( $block_name, $meta_key, $post_id );
-						if( isset( $sub_field_meta ) ) {
-							$build_beautiful_array[$i][$sub_field_value] = $sub_field_meta;
-						}
-					}
-				endforeach;
-			}
-			return $build_beautiful_array;
-		}
-	}
-endif;
-
-// mit ID
-if ( ! function_exists( 'get_acf_block_setting_with_id' ) ) :
-	function get_acf_block_setting_with_id( $block_name, $option_name, $post_id ) {
-
-		$post = get_post( $post_id );
-		$blocks = parse_blocks( $post->post_content );
-		foreach( $blocks as $block ) {
-			if( $block['blockName'] !== $block_name ) {
-				continue;
-			}
-			if( $block['blockName'] === $block_name ) {
-				if( isset( $block['attrs']['data'][$option_name] ) ) {
-					return $block['attrs']['data'][$option_name];
-				}
-			}
-		}
-		return;
-	}
-endif;
-*/
-
-/* =============================================================== *\
-   ACF ID Hack
-\* =============================================================== */
-/*
-function acf_id_hack($block){
-	if(!array_key_exists('id', $block)):
-		$block['id'] = 1;
-		if(array_key_exists('id', $block['attrs'])):
-			$block['id'] = $block['attrs']['id'];
-		endif;
-	endif;
-	return($block);
-}
-*/
 
 /* =============================================================== *\
    Block-Variations
@@ -558,6 +411,7 @@ function prefix_editor_assets() {
 add_action( 'enqueue_block_editor_assets', 'prefix_editor_assets' );
 */
 
+
 /* =============================================================== *\
    Block-Styles
 \* =============================================================== */
@@ -572,6 +426,8 @@ if (function_exists('register_block_style')) {
     );
 }
 */
+
+
 /* =============================================================== *\
    Block-Pattern
 \* =============================================================== */
@@ -610,69 +466,82 @@ add_action( 'init', 'block_template_neufahrzeug' );
 /* =============================================================== *\ 
    Allowed-Blocks
 \* =============================================================== */
-function whitelist_blocks() {
-    return array(
-        'acf/slick-slider',
-        'acf/touren_auf_startseite',
-        'acf/seiltrenner',
-        //'acf/seiltrennerheader',
-        //'core/archives',
-        'core/block',
-        //'core/calendar',
-        //'core/categories',
-        //'core/latest-comments',
-        //'core/latest-posts',
-        //'core/rss',
-        //'core/search',
-        //'core/shortcode',
-        //'core/social-link',
-        //'core/tag-cloud',
-        //'core/audio',
-        'core/button',
-        'core/buttons',
-        //'core/freeform',
-        //'core/code',
-        'core/column',
-        'core/columns',
-        'core/file',
-        //'core/gallery',
-        'core/group',
-        'core/heading',
-        //'core/html',
-        //'core/image',
-        'core/list',
-        'core/list-item',
+function blacklist_blocks($allowed_blocks, $editor_context) {
+
+    // Alle registrierten Blöcke holen
+    $all_blocks = WP_Block_Type_Registry::get_instance()->get_all_registered();
+    $allowed    = array_keys($all_blocks);
+
+    // Zu verbergende Blöcke definieren (Blacklist)
+    $blacklist = array(
+        'core/table',
+        'core/verse',
+        'core/separator',
         'core/media-text',
-        //'core/missing',
-        //'core/more',
-        //'core/nextpage',
-        'core/paragraph',
-        //'core/preformatted',
-        //'core/pullquote',
-        //'core/quote',
-        //'core/separator',
-        //'core/social-links',
-        'core/spacer',
-        //'core/subhead',
-        //'core/table',
-        //'core/text-columns',
-        //'core/verse',
-        //'core/video',
-        //'core-embed/youtube',
+        'core/more',
+        'core/nextpage',
+        'core/archives',
+        'core/calendar',
+        'core/categories',
+        'core/latest-posts',
+        'core/latest-comments',
+        'core/rss',
+        'core/search',
+        'core/social-links',
+        'core/social-icon',
+        'core/social-icons',
+        'core/tag-cloud',
+        'core/navigation',
+        'core/navigation-link',
+        'core/navigation-submenu',
+        'core/query-loop',
+        'core/query-pagination',
+        'core/query-pagination-next',
+        'core/query-pagination-previous',
+        'core/query-pagination-numbers',
+        'core/query-title',
+        'core/query-total',
+        'core/details',
+        'core/avatar',
+        'core/site-title',
+        'core/site-logo',
+        'core/site-tagline',
+        'core/page-list',
+        'core/page-list-item',
+        'core/term-description',
+        'core/legacy-widget',
+        'core/widget-group',
+        'core/post-comments',
+        'core/post-comment',
+        'core/comments-title',
+        'core/comments-query-loop',
+        'core/comment-author-name',
+        'core/comment-content',
+        'core/comment-date',
+        'core/comment-edit-link',
+        'core/comment-reply-link',
+        'core/comment-template',
     );
+
+    // Blacklist aus der Gesamtliste entfernen
+    $allowed = array_diff($allowed, $blacklist);
+
+    return $allowed;
 }
-//add_filter('allowed_block_types_all', 'whitelist_blocks');
+//add_filter('allowed_block_types_all', 'blacklist_blocks', 10, 2);
+
+
 /* =============================================================== *\
 
  	 Frontend
 
 \* =============================================================== */
 
+
 /* =============================================================== *\
    Add Frontend JavaScripts
    Add Frontend CSS
 \* =============================================================== */
-
 function ud_enqueue_frontend_scripts(){
     //wp_dequeue_style('global-styles'); // Core-Block-Styles entfernen Achtung, entfernt auch Schrift über theme.json
     // wp_dequeue_style( 'wp-block-columns' ); // einzelne Core-Block-Styles entfernen
