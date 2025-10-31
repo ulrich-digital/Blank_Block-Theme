@@ -1,32 +1,38 @@
-# Development Wordpress Block Theme
+# ulrichdigital Block Theme
 
-## Variable Fonts
+Ein modulares Full-Site-Editing-Theme für WordPress, optimiert für die Blockentwicklung mit sass-Build-Prozess, variable Webfonts und benutzerdefinierte Farb- und Typografie-Vorgaben.
 
-### Create Variable WOFF2 Fonts
+## Funktionen
+- Vollständig kompatibel mit WordPress Full Site Editing (FSE)
+- Eigene Farbpalette und Verlaufsdefinitionen
+- Integration der variablen Schrift Rubik UD (normal & italic, 400–700)
+- Unterstützt benutzerdefinierte Templates (z. B. Single ohne Titel)
+- Sass-basierter Build-Prozess mit npm-Scripts build und watch
 
+
+## Technische Hinweise
+- Entwickelt mit Sass (via npm run build / npm run watch)
+- Schrift-Einbindung und Typografie-Voreinstellungen in theme.json
+- Variable Fonts werden als WOFF2 im Ordner assets/fonts/ verwaltet
+- Layout-Breiten: contentSize: 100%, wideSize: 1000px
+- Unterstützte Einheiten: px, em, rem, vw, %
+
+## Build-Prozess
 ```
-git clone --recursive https://github.com/google/woff2.git
-cd woff2
-```
-In the woff2 directory:
-```
-make clean all
-./woff2_compress path-to-font/variable-font.ttf
+# CSS einmalig kompilieren
+npm run build
+
+# Automatische Überwachung bei der Entwicklung
+npm run watch
 ```
 
-[https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/](https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/)
 
-### Variable Fonts in theme.json
+## Hinweis zu Variable Fonts  
+Frühere Probleme in WordPress 6.0 betrafen die Kombination mehrerer Font-Weights in einer einzigen `fontFace`-Deklaration (insbesondere in Chrome).  
+Empfohlene Lösung bleibt weiterhin gültig:  
+- **Jede Schriftstärke separat** in `theme.json` deklarieren  
+- **Einzigartigen Fontnamen** verwenden, der sicher nicht systemweit installiert ist  
 
-They are two issues in the Wordpress 6.0
-1. a issue with font weight and styles
-2. Multiple font-weights in one font-face declaration (chrome only)
-
-Solution:
-1. Rename the font (not font-file) in a unique String, which is certainly not installed on a system.
-2. Add for every font-weight a fontFace declaration
-
-This snippet is working 
 ```
 {
 	"version": 2,
@@ -52,34 +58,6 @@ This snippet is working
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./fonts/Rubik-VariableFont_wght.woff2" ]
-						},
-						{
-							"fontFamily": "Rubik UD",
-							"fontWeight": "700",
-							"fontStyle": "normal",
-							"fontStretch": "normal",
-							"src": [ "file:./fonts/Rubik-VariableFont_wght.woff2" ]
-						},
-						{
-							"fontFamily": "Rubik UD",
-							"fontWeight": "400",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./fonts/Rubik-Italic-VariableFont_wght.woff2" ]
-						},
-						{
-							"fontFamily": "Rubik UD",
-							"fontWeight": "500",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./fonts/Rubik-Italic-VariableFont_wght.woff2" ]
-						},
-						{
-							"fontFamily": "Rubik UD",
-							"fontWeight": "700",
-							"fontStyle": "italic",
-							"fontStretch": "normal",
-							"src": [ "file:./fonts/Rubik-Italic-VariableFont_wght.woff2" ]
 						}
 					]
 				}
@@ -92,17 +70,39 @@ This snippet is working
 			"h2": {
 				"typography": {
 					"fontFamily": "Rubik UD",
-					"fontWeight": "700"
+					"fontWeight": "500"
 				}
 			}
 		}
 	}
 }
 ```
-## Navigation
 
-Problem: Wenn eine Navigation über das Template-File (i.e. header.html) eingefügt werden soll, ist die Menü-ID unbekannt. Diese sollte vorhanden sein, damit die korrekten Menü-Einträge ausgegeben werden können.
+## Create Variable WOFF2 Fonts
 
-Lösungsansatz 1: Im Editor ein Navigations-Block hinzufügen, im Code-Editor den entsprechenden Code rauskopieren, Navigations-Block wieder löschen.
+```
+git clone --recursive https://github.com/google/woff2.git
+cd woff2
+```
+In the woff2 directory:
+```
+make clean all
+./woff2_compress path-to-font/variable-font.ttf
+```
 
-Lösungsansatz 2: Bei kleinen Seiten (wenig Menü-Punkte) das Menü gleich händisch im header.html hinterlegen.
+[https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/](https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/)
+
+
+
+## Anforderungen
+- WordPress ≥ 6.5
+- PHP ≥ 8.0
+- Node ≥ 18 (mit npm ≥ 8 für Build-Prozess)
+
+
+## Autor
+[ulrich.digital gmbh](https://ulrich.digital)
+
+## Lizenz
+GPL v2 or later
+[https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)
