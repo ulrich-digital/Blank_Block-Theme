@@ -28,8 +28,7 @@ npm run watch
 
 
 
-## Hinweise
-### Hinweis zu Variable Fonts
+## Hinweise zu Variable Fonts
 Frühere Probleme in WordPress 6.0 betrafen die Kombination mehrerer Font-Weights in einer einzigen `fontFace`-Deklaration (insbesondere in Chrome).
 Empfohlene Lösung bleibt weiterhin gültig:
 - **Jede Schriftstärke separat** in `theme.json` deklarieren
