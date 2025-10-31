@@ -26,14 +26,7 @@ npm run build
 npm run watch
 ```
 
-<details>
-<summary>Mehr anzeigen</summary>
 
-- Punkt 1  
-- Punkt 2  
-- Punkt 3  
-
-</details>
 
 ## Hinweise
 - Hinweis zu Variable Fonts
@@ -41,51 +34,58 @@ npm run watch
     Empfohlene Lösung bleibt weiterhin gültig:
     - **Jede Schriftstärke separat** in `theme.json` deklarieren
     - **Einzigartigen Fontnamen** verwenden, der sicher nicht systemweit installiert ist
+    - <details>
+        <summary>Mehr anzeigen</summary>
 
-    ```
-    {
-        "version": 2,
-        "customTemplates":[],
-        "settings": {
-            "typography": {
-                "fontFamilies": [
-                    {
-                        "fontFamily": "\"Rubik UD\", sans-serif",
-                        "name": "Rubik UD",
-                        "slug": "rubik",
-                        "fontFace": [
-                            {
-                                "fontFamily": "Rubik UD",
-                                "fontWeight": "400",
-                                "fontStyle": "normal",
-                                "fontStretch": "normal",
-                                "src": [ "file:./fonts/Rubik-VariableFont_wght.woff2" ]
-                            },
-                            {
-                                "fontFamily": "Rubik UD",
-                                "fontWeight": "500",
-                                "fontStyle": "normal",
-                                "fontStretch": "normal",
-                                "src": [ "file:./fonts/Rubik-VariableFont_wght.woff2" ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        },
+        ```
+        {
+            "version": 2,
+            "customTemplates":[],
+            "settings": {
+                "typography": {
+                    "fontFamilies": [
+                        {
+                            "fontFamily": "\"Rubik UD\", sans-serif",
+                            "name": "Rubik UD",
+                            "slug": "rubik",
+                            "fontFace": [
+                                {
+                                    "fontFamily": "Rubik UD",
+                                    "fontWeight": "400",
+                                    "fontStyle": "normal",
+                                    "fontStretch": "normal",
+                                    "src": [ "file:./fonts/Rubik-VariableFont_wght.woff2" ]
+                                },
+                                {
+                                    "fontFamily": "Rubik UD",
+                                    "fontWeight": "500",
+                                    "fontStyle": "normal",
+                                    "fontStretch": "normal",
+                                    "src": [ "file:./fonts/Rubik-VariableFont_wght.woff2" ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
 
-        "styles": {
-            "elements": {
-                "h2": {
-                    "typography": {
-                        "fontFamily": "Rubik UD",
-                        "fontWeight": "500"
+            "styles": {
+                "elements": {
+                    "h2": {
+                        "typography": {
+                            "fontFamily": "Rubik UD",
+                            "fontWeight": "500"
+                        }
                     }
                 }
             }
         }
-    }
-    ```
+        ```
+
+        </details>
+
+
+    
 
 - Create Variable WOFF2 Fonts
 
