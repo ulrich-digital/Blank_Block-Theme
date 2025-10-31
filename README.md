@@ -29,72 +29,77 @@ npm run watch
 
 
 ## Hinweise
-- Hinweis zu Variable Fonts
-    Frühere Probleme in WordPress 6.0 betrafen die Kombination mehrerer Font-Weights in einer einzigen `fontFace`-Deklaration (insbesondere in Chrome).
-    Empfohlene Lösung bleibt weiterhin gültig:
-    - **Jede Schriftstärke separat** in `theme.json` deklarieren
-    - **Einzigartigen Fontnamen** verwenden, der sicher nicht systemweit installiert ist
-    - <details>
-        <summary>Beispiel-JSON</summary>
-        ```theme.json
-        {
-            "version": 2,
-            "customTemplates":[],
-            "settings": {
-                "typography": {
-                    "fontFamilies": [
+### Hinweis zu Variable Fonts
+Frühere Probleme in WordPress 6.0 betrafen die Kombination mehrerer Font-Weights in einer einzigen `fontFace`-Deklaration (insbesondere in Chrome).
+Empfohlene Lösung bleibt weiterhin gültig:
+- **Jede Schriftstärke separat** in `theme.json` deklarieren
+- **Einzigartigen Fontnamen** verwenden, der sicher nicht systemweit installiert ist
+<details>
+<summary>Beispiel-JSON</summary>
+
+```json
+{
+    "version": 2,
+    "customTemplates":[],
+    "settings": {
+        "typography": {
+            "fontFamilies": [
+                {
+                    "fontFamily": "\"Rubik UD\", sans-serif",
+                    "name": "Rubik UD",
+                    "slug": "rubik",
+                    "fontFace": [
                         {
-                            "fontFamily": "\"Rubik UD\", sans-serif",
-                            "name": "Rubik UD",
-                            "slug": "rubik",
-                            "fontFace": [
-                                {
-                                    "fontFamily": "Rubik UD",
-                                    "fontWeight": "400",
-                                    "fontStyle": "normal",
-                                    "fontStretch": "normal",
-                                    "src": [ "file:./fonts/Rubik-VariableFont_wght.woff2" ]
-                                },
-                                {
-                                    "fontFamily": "Rubik UD",
-                                    "fontWeight": "500",
-                                    "fontStyle": "normal",
-                                    "fontStretch": "normal",
-                                    "src": [ "file:./fonts/Rubik-VariableFont_wght.woff2" ]
-                                }
-                            ]
+                            "fontFamily": "Rubik UD",
+                            "fontWeight": "400",
+                            "fontStyle": "normal",
+                            "fontStretch": "normal",
+                            "src": [ "file:./fonts/Rubik-VariableFont_wght.woff2" ]
+                        },
+                        {
+                            "fontFamily": "Rubik UD",
+                            "fontWeight": "500",
+                            "fontStyle": "normal",
+                            "fontStretch": "normal",
+                            "src": [ "file:./fonts/Rubik-VariableFont_wght.woff2" ]
                         }
                     ]
                 }
-            },
+            ]
+        }
+    },
 
-            "styles": {
-                "elements": {
-                    "h2": {
-                        "typography": {
-                            "fontFamily": "Rubik UD",
-                            "fontWeight": "500"
-                        }
-                    }
+    "styles": {
+        "elements": {
+            "h2": {
+                "typography": {
+                    "fontFamily": "Rubik UD",
+                    "fontWeight": "500"
                 }
             }
         }
-        ```
-        </details>
+    }
+}
+```
+</details>
 
 <details>
-    <summary>Create Variable WOFF2 Fonts</summary>
-    [https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/](https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/)
-    ```bash
-    git clone --recursive https://github.com/google/woff2.git
-    cd woff2
-    ```
-    In the woff2 directory:
-    ```
-    make clean all ./woff2_compress path-to-font/variable-font.ttf
-    ```
+<summary>Create Variable WOFF2 Fonts</summary>
+    
+[https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/](https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/)
 
+```bash
+git clone --recursive https://github.com/google/woff2.git
+cd woff2
+```
+
+In the woff2 directory:
+
+```
+make clean all ./woff2_compress path-to-font/variable-font.ttf
+```
 </details>
+
 [https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/](https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/)
 
 
