@@ -35,8 +35,7 @@ npm run watch
     - **Jede Schriftstärke separat** in `theme.json` deklarieren
     - **Einzigartigen Fontnamen** verwenden, der sicher nicht systemweit installiert ist
     - <details>
-        <summary>Mehr anzeigen</summary>
-
+        <summary>Beispiel-JSON</summary>
         ```
         {
             "version": 2,
@@ -81,11 +80,26 @@ npm run watch
             }
         }
         ```
-
         </details>
 
+<details>
+    <summary>Create Variable WOFF2 Fonts</summary>
 
-    
+    ```
+    git clone --recursive https://github.com/google/woff2.git
+    cd woff2
+    ```
+    In the woff2 directory:
+    ```
+    make clean all
+    ./woff2_compress path-to-font/variable-font.ttf
+    ```
+
+    [https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/](https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/)
+
+</details>
+
+
 
 - Create Variable WOFF2 Fonts
 
