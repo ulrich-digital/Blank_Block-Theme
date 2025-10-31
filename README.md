@@ -82,22 +82,22 @@ npm run watch
         ```
         </details>
 
-<details>
-    <summary>Create Variable WOFF2 Fonts</summary>
+    <details>
+        <summary>Create Variable WOFF2 Fonts</summary>
 
-    ```
-    git clone --recursive https://github.com/google/woff2.git
-    cd woff2
-    ```
-    In the woff2 directory:
-    ```
-    make clean all
-    ./woff2_compress path-to-font/variable-font.ttf
-    ```
+        ```
+        git clone --recursive https://github.com/google/woff2.git
+        cd woff2
+        ```
+        In the woff2 directory:
+        ```
+        make clean all
+        ./woff2_compress path-to-font/variable-font.ttf
+        ```
 
-    [https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/](https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/)
+        [https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/](https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/)
 
-</details>
+    </details>
 
 
 
