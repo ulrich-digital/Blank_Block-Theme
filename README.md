@@ -36,7 +36,7 @@ npm run watch
     - **Einzigartigen Fontnamen** verwenden, der sicher nicht systemweit installiert ist
     - <details>
         <summary>Beispiel-JSON</summary>
-        ```
+        ```theme.json
         {
             "version": 2,
             "customTemplates":[],
