@@ -85,7 +85,7 @@ Empfohlene Lösung bleibt weiterhin gültig:
 
 <details>
 <summary>Create Variable WOFF2 Fonts</summary>
-    
+
 [https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/](https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/)
 
 ```bash
@@ -99,24 +99,6 @@ In the woff2 directory:
 make clean all ./woff2_compress path-to-font/variable-font.ttf
 ```
 </details>
-
-[https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/](https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/)
-
-
-- Create Variable WOFF2 Fonts
-
-    ```
-    git clone --recursive https://github.com/google/woff2.git
-    cd woff2
-    ```
-    In the woff2 directory:
-    ```
-    make clean all
-    ./woff2_compress path-to-font/variable-font.ttf
-    ```
-
-    [https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/](https://henry.codes/writing/how-to-convert-variable-ttf-font-files-to-woff2/)
-
 
 
 ## Anforderungen
