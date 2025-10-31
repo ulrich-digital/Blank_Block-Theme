@@ -26,7 +26,16 @@ npm run build
 npm run watch
 ```
 
-## Hintweise
+<details>
+<summary>Mehr anzeigen</summary>
+
+- Punkt 1  
+- Punkt 2  
+- Punkt 3  
+
+</details>
+
+## Hinweise
 - Hinweis zu Variable Fonts
     Frühere Probleme in WordPress 6.0 betrafen die Kombination mehrerer Font-Weights in einer einzigen `fontFace`-Deklaration (insbesondere in Chrome).
     Empfohlene Lösung bleibt weiterhin gültig:
