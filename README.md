@@ -95,7 +95,8 @@ cd woff2
 In the woff2 directory:
 
 ```
-make clean all ./woff2_compress path-to-font/variable-font.ttf
+make clean all 
+./woff2_compress path-to-font/variable-font.ttf
 ```
 </details>
 
